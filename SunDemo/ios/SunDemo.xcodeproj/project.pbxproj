@@ -41,6 +41,12 @@
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		939CCFEF27B44774833D233A /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB0FA81CA329433ABF5DE589 /* MaterialCommunityIcons.ttf */; };
 		96E1AAAD17854D1AA60D2E2D /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A2E206C6E707493E8DD03C64 /* Foundation.ttf */; };
+		AA4EE6E11F298277000C108F /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4EE6D71F298277000C108F /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AA4EE6E21F298277000C108F /* MXRBase64.mm in Sources */ = {isa = PBXBuildFile; fileRef = AA4EE6DA1F298277000C108F /* MXRBase64.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AA4EE6E31F298277000C108F /* readme_base64.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AA4EE6DB1F298277000C108F /* readme_base64.rtf */; };
+		AA4EE6E41F298277000C108F /* MXRClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4EE6DE1F298277000C108F /* MXRClassInfo.m */; };
+		AA4EE6E51F298277000C108F /* NSObject+MXRModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4EE6E01F298277000C108F /* NSObject+MXRModel.m */; };
+		AA4EE7061F29829E000C108F /* MXRRNInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4EE7051F29829E000C108F /* MXRRNInterface.m */; };
 		B83BC5F0979248909138CC62 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 53C3F5B98188457DBD743BDF /* Zocial.ttf */; };
 		BEFBA424DC434E9C852C67D2 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D5FEE9730CAE4D39A3B7EEC8 /* FontAwesome.ttf */; };
 		D33634C64CAB4B7A9DF2028A /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3648150D364B4D4D8F5F3AC0 /* SimpleLineIcons.ttf */; };
@@ -308,6 +314,18 @@
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		A2E206C6E707493E8DD03C64 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		AA1B30A2C47A48249D67882B /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
+		AA4EE6D61F298277000C108F /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
+		AA4EE6D71F298277000C108F /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
+		AA4EE6D81F298277000C108F /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		AA4EE6D91F298277000C108F /* MXRBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXRBase64.h; sourceTree = "<group>"; };
+		AA4EE6DA1F298277000C108F /* MXRBase64.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MXRBase64.mm; sourceTree = "<group>"; };
+		AA4EE6DB1F298277000C108F /* readme_base64.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = readme_base64.rtf; sourceTree = "<group>"; };
+		AA4EE6DD1F298277000C108F /* MXRClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXRClassInfo.h; sourceTree = "<group>"; };
+		AA4EE6DE1F298277000C108F /* MXRClassInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXRClassInfo.m; sourceTree = "<group>"; };
+		AA4EE6DF1F298277000C108F /* NSObject+MXRModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MXRModel.h"; sourceTree = "<group>"; };
+		AA4EE6E01F298277000C108F /* NSObject+MXRModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MXRModel.m"; sourceTree = "<group>"; };
+		AA4EE7041F29829E000C108F /* MXRRNInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MXRRNInterface.h; path = SunDemo/MXRRNInterface.h; sourceTree = "<group>"; };
+		AA4EE7051F29829E000C108F /* MXRRNInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MXRRNInterface.m; path = SunDemo/MXRRNInterface.m; sourceTree = "<group>"; };
 		C40DF55F12C3401B98D201EE /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		D5FEE9730CAE4D39A3B7EEC8 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		DB0FA81CA329433ABF5DE589 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
@@ -449,8 +467,11 @@
 			isa = PBXGroup;
 			children = (
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
+				AA4EE6D41F298277000C108F /* Component */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
+				AA4EE7041F29829E000C108F /* MXRRNInterface.h */,
+				AA4EE7051F29829E000C108F /* MXRRNInterface.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
@@ -571,6 +592,40 @@
 				AA4EE6A21F28E4B4000C108F /* libRNVectorIcons.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		AA4EE6D41F298277000C108F /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				AA4EE6D51F298277000C108F /* Base64 */,
+				AA4EE6DC1F298277000C108F /* MXRModel */,
+			);
+			name = Component;
+			path = SunDemo/Component;
+			sourceTree = "<group>";
+		};
+		AA4EE6D51F298277000C108F /* Base64 */ = {
+			isa = PBXGroup;
+			children = (
+				AA4EE6D61F298277000C108F /* GTMBase64.h */,
+				AA4EE6D71F298277000C108F /* GTMBase64.m */,
+				AA4EE6D81F298277000C108F /* GTMDefines.h */,
+				AA4EE6D91F298277000C108F /* MXRBase64.h */,
+				AA4EE6DA1F298277000C108F /* MXRBase64.mm */,
+				AA4EE6DB1F298277000C108F /* readme_base64.rtf */,
+			);
+			path = Base64;
+			sourceTree = "<group>";
+		};
+		AA4EE6DC1F298277000C108F /* MXRModel */ = {
+			isa = PBXGroup;
+			children = (
+				AA4EE6DD1F298277000C108F /* MXRClassInfo.h */,
+				AA4EE6DE1F298277000C108F /* MXRClassInfo.m */,
+				AA4EE6DF1F298277000C108F /* NSObject+MXRModel.h */,
+				AA4EE6E01F298277000C108F /* NSObject+MXRModel.m */,
+			);
+			path = MXRModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -976,6 +1031,7 @@
 				96E1AAAD17854D1AA60D2E2D /* Foundation.ttf in Resources */,
 				1EC82627FE174B59A8DC7D35 /* Ionicons.ttf in Resources */,
 				939CCFEF27B44774833D233A /* MaterialCommunityIcons.ttf in Resources */,
+				AA4EE6E31F298277000C108F /* readme_base64.rtf in Resources */,
 				425DF051A4A9444BB3EEE452 /* MaterialIcons.ttf in Resources */,
 				EC02538DCAF44347B8589D76 /* Octicons.ttf in Resources */,
 				D33634C64CAB4B7A9DF2028A /* SimpleLineIcons.ttf in Resources */,
@@ -1044,7 +1100,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA4EE6E21F298277000C108F /* MXRBase64.mm in Sources */,
+				AA4EE6E51F298277000C108F /* NSObject+MXRModel.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				AA4EE6E11F298277000C108F /* GTMBase64.m in Sources */,
+				AA4EE7061F29829E000C108F /* MXRRNInterface.m in Sources */,
+				AA4EE6E41F298277000C108F /* MXRClassInfo.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
