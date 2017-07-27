@@ -8,9 +8,7 @@
  *
  */
 import native from '../native-interface'
-import MXRUserModel from '../../module/login-module/model/login-model'
 import Toast from 'react-native-root-toast';
-import locals from '../locals'
 import ErrorCode from './error-code'
 
 
@@ -43,10 +41,10 @@ export default class MXRNetworkManager{
             'osType':'1',
             'region':'0',
             'appId':'8J37OJ6HZI6G7LKV2H99CAS7PIEEUA5N',
-            'userId':MXRUserModel.instance.userId,
+            'userId':'123',
             'platformNo':'3as2d3sad54adsfds54f25sdf',
             'deviceUnique':'123',
-            'deviceId':MXRUserModel.instance.deviceId,
+            'deviceId':'456',
             'appVersion':'5.2.6',
 
         }
@@ -126,7 +124,7 @@ export default class MXRNetworkManager{
             }else{
                 value=null;
                 console.log("Error request ="+url+",ErrorCode="+errorCode+",Error Msg="+this.getErrorMsg());
-                Toast.show(locals.t('NETWORK_ERROR_'+errorCode), {
+                Toast.show('网络出错', {
                     duration: Toast.durations.LONG,
                     position: Toast.positions.CENTER,
                     shadow: true,

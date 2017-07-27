@@ -8,6 +8,8 @@ import {
 } from 'react-native';
 import px2px from '../Utils/px2dp'
 import computeTime from '../Utils/computeTime'
+import AllSubjectView from './all-subject/View'
+import AllSubjectTableView from "./all-subject/View/index";
 export default class MeView extends Component {
 
     // 构造
@@ -24,10 +26,7 @@ export default class MeView extends Component {
       render(){
 
           return (
-              <View style={{backgroundColor : 'green' , flex: 1}}>
-                  <Text style={{color : 'yellow' , fontSize : px2px(20)}}> 我 </Text>
-              </View>
-
+              <AllSubjectTableView/>
           );
       };
 }
