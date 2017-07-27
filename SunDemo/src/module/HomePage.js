@@ -6,10 +6,9 @@ import {
     View, Text,TouchableOpacity
 } from 'react-native';
 import px2px from '../Utils/px2dp'
-import TestOnePage  from './TestOnePage'
-import TestTwoPage  from './TestTwoPage'
-import TestThreePage from './TestThreePage'
+
 import theme from '../config/theme'
+import News from './News'
 var CustomTabBar = require('../lib/CustomTabBar');
 var ScrollableTabview = require('react-native-scrollable-tab-view');
 export default class HomePageView extends Component {
@@ -32,8 +31,10 @@ export default class HomePageView extends Component {
                 tabBarTextStyle={{fontSize: theme.scrollView.fontSize}}
                 tabBarUnderlineStyle={theme.scrollView.underlineStyle}
             >
+                {this.state.tabName.map((item , i) => {
                     return (
-                        <TestOnePage tabLabel = {item} key = {i} tabTag = {item}/>
+                        <News tabLabel = {item} key = {i} tabTag = {item}/>
+
                     );
                 })}
             </ScrollableTabview>
