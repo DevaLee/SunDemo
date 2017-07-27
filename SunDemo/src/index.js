@@ -10,6 +10,7 @@ import {AppRegistry} from 'react-native';
 import HomePageView from './module/HomePage';
 import MeView from './module/Me'
 import TabbarView from './lib/Tabbar'
+import AllSubjectTableView from './module/all-subject/View'
 
 export default function () {
     try {
@@ -19,6 +20,15 @@ export default function () {
                 navigationOptions :{
                     header : null
                 }
+            },
+            'MeView' : {
+                screen : MeView,
+                navigationOptions:{
+                    header: null
+                }
+            },
+            'AllSubjectView' : {
+                screen: AllSubjectTableView,
             }
         },
             {initialRouteName : 'TabbarView'});

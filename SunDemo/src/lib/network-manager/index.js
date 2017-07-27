@@ -44,7 +44,7 @@ export default class MXRNetworkManager{
             'userId':'123',
             'platformNo':'3as2d3sad54adsfds54f25sdf',
             'deviceUnique':'123',
-            'deviceId':'456',
+            'deviceId':'644E3F95-BCD1-431E-8D83-7B42A289F0A8',
             'appVersion':'5.2.6',
 
         }
@@ -107,19 +107,20 @@ export default class MXRNetworkManager{
         try {
             // 注意这里的await语句，其所在的函数必须有async关键字声明
             let url = await this.makeUrl(method,absoluteURL,params);
+            console.log(url);
             let headBody = await this.makeMethodHeadBody(method,params);
             let response = await fetch(url,headBody);
             let responseJson = await response.json();
             errorCode = this.getErrorCode(responseJson);
             errorMsg =  this.getErrorMsg(responseJson);
-            if(errorCode == ErrorCode.CODE_0){
-                if( responseJson['Body']!=''){
+            if(errorCode === ErrorCode.CODE_0){
+                if( responseJson['Body']!==''){
                     value = await new native().decodeBase64WithString(responseJson['Body']);//判断body
                 }else{
                     value = null;
                 }
 
-            }else if(errorCode == ErrorCode.CODE_404){
+            }else if(errorCode === ErrorCode.CODE_404){
                 value = null;
             }else{
                 value=null;
