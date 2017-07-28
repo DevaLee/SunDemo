@@ -11,6 +11,8 @@ import HomePageView from './module/HomePage';
 import MeView from './module/Me'
 import TabbarView from './lib/Tabbar'
 import AllSubjectTableView from './module/all-subject/View'
+import News from './module/News'
+
 
 export default function () {
     try {
@@ -21,7 +23,9 @@ export default function () {
             //         header : null
             //     }
             // }
-            Home : {screen : TabbarView}
+            Home : {screen : TabbarView ,navigationOptions:{header : null}},
+            News : {screen : News},
+            AllSubjectTableView : {screen : AllSubjectTableView}
         });
          AppRegistry.registerComponent('SunDemo', () => SunDemo);
     }catch (error) {

@@ -11,7 +11,8 @@ import theme from '../config/theme'
 import News from './News'
 var CustomTabBar = require('../lib/CustomTabBar');
 var ScrollableTabview = require('react-native-scrollable-tab-view');
-export default class HomePageView extends Component {
+export default class HomePageView extends React.Component {
+
     // 构造
       constructor(props) {
         super(props);
@@ -41,7 +42,4 @@ export default class HomePageView extends Component {
         );
 
       };
-
-
-
 }

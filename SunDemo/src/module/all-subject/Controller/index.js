@@ -30,11 +30,11 @@ export default class SubjectController {
         let dataDict = JSON.parse(result.data);
         console.log(dataDict);
         let listArray = dataDict['list'];
-
+        let number = SubjectProxy.instance.subjectDataArray.length;
         console.log('listArray' + listArray);
         listArray.forEach((item , index, array)=>{
             item.title = item.name;
-            item.key = item.id;
+            item.key = number + index;
             SubjectProxy.instance._addSubject(item);
         });
         return SubjectProxy.instance.subjectDataArray;
