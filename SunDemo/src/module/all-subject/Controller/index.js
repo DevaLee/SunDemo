@@ -3,38 +3,45 @@
  */
 'use strict'
 import MXRNetworkManager from '../../../lib/network-manager';
-const singleton = Symbol();
+import SubjectModel from  '../Mode/subject-model';
+import SubjectProxy from  '../Mode/subject-proxy';
+ const singleton = Symbol();
 const singletonEnforce = Symbol();
 
 export default class SubjectController {
     //https://bs-core.mxrcorp.cn/home/recommend/all?page=1
 
 
-
-    constructor(enforce){
+    constructor(enforce) {
         if (enforce !== singletonEnforce) throw "can not create singleton";
     }
 
-    static get instance(){
-        if (!this[singleton]){
-            this[singleton] = new  SubjectController(singletonEnforce);
+    static get instance() {
+        if (!this[singleton]) {
+            this[singleton] = new SubjectController(singletonEnforce);
         }
         return this[singleton];
     }
 
-    async _getSubjectData(index){
+    async _getSubjectData(index) {
         let network = new MXRNetworkManager();
-        let paramdict = {page : index};
-        let url = 'https://bs-core.mxrcorp.cn/home/recommend/all';
-        let {data} = await network.get(url ,paramdict);
-        console.log({data});
+        let url = 'https://bs-core.mxrcorp.cn/home/recommend/all?index=' + index;
+        let result = await network.get(url, null);
+        let dataDict = JSON.parse(result.data);
+        console.log(dataDict);
+        let listArray = dataDict['list'];
 
-
-
-
-
+        console.log('listArray' + listArray);
+        listArray.forEach((item , index, array)=>{
+            item.title = item.name;
+            item.key = item.id;
+            SubjectProxy.instance._addSubject(item);
+        });
+        return SubjectProxy.instance.subjectDataArray;
     }
-
-
-
 }
+
+
+
+
+

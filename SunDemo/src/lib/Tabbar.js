@@ -12,7 +12,9 @@ import MeView from '../module/Me'
 import TabNavigatorItem from "react-native-tab-navigator/TabNavigatorItem";
 
 export default class TabbarView extends Component{
-
+    static  navigationOptions :{
+        header : null
+    };
     // 构造
       constructor(props) {
           super(props);
@@ -32,7 +34,7 @@ export default class TabbarView extends Component{
                     renderSelectedIcon = {() => <Image source={require('../res/Tab-Res/tabBar_faxian_sel.png')} style={styles.tab_image}/>}
                     onPress={() => this.setState({selectedTab:'HomePage'})}
                 >
-                    {<HomePageView navigator={this.props.navigator}/>}
+                    {<HomePageView/>}
                 </TabNavigatorItem>
 
                 <TabNavigatorItem

@@ -15,23 +15,14 @@ import AllSubjectTableView from './module/all-subject/View'
 export default function () {
     try {
         const SunDemo = StackNavigator({
-            'TabbarView' : {
-                screen : TabbarView,
-                navigationOptions :{
-                    header : null
-                }
-            },
-            'MeView' : {
-                screen : MeView,
-                navigationOptions:{
-                    header: null
-                }
-            },
-            'AllSubjectView' : {
-                screen: AllSubjectTableView,
-            }
-        },
-            {initialRouteName : 'TabbarView'});
+            // 'TabbarView' : {
+            //     screen : TabbarView,
+            //     navigationOptions :{
+            //         header : null
+            //     }
+            // }
+            Home : {screen : TabbarView}
+        });
          AppRegistry.registerComponent('SunDemo', () => SunDemo);
     }catch (error) {
 

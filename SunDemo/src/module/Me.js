@@ -8,23 +8,17 @@ import {
 } from 'react-native';
 import px2px from '../Utils/px2dp'
 import computeTime from '../Utils/computeTime'
-
 import AllSubjectTableView from './all-subject/View'
 import {StackNavigator} from 'react-navigation'
-
-
-const  stackNav = StackNavigator({
-        'AllSubjectTableView' : {
-            screen : AllSubjectTableView,
-            navigationOptions :{
-                header : null
-            }
-        }
-    },
-    {initialRouteName : 'AllSubjectTableView'});
-
+import NewsPage  from './News'
+import AllSubject from './all-subject/View'
 
 export default class MeView extends Component {
+    //
+    // static  = ({ navigation }) => ({
+    //         title: '专题',
+    // });
+
 
     // 构造
       constructor(props) {
@@ -41,14 +35,10 @@ export default class MeView extends Component {
 
       render(){
           return (
-              <Text> ddddd </Text>
+             <AllSubject/>
           );
       };
 
-      // _goNextPage(){
-      //
-      //   return stackNav;
-      //
-      // }
+
 }
 
