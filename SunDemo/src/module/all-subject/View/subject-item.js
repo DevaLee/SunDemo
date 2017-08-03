@@ -2,32 +2,39 @@
  * Created by mxr on 2017/7/27.
  */
 import React,{PureComponent} from 'react';
-import {Text, Image,View,StyleSheet} from 'react-native'
+import {Text, Image,View,StyleSheet,TouchableOpacity} from 'react-native'
 import px2dp from '../../../Utils/px2dp'
 export default class SubjectItem extends PureComponent{
+
+    static propTypes ={
+        item:React.PropTypes.object,
+        pressHandleFunc : React.PropTypes.func
+    };
 
     // 构造
       constructor(props) {
         super(props);
         // 初始状态
         this.state = {
-            data : this.props.data,
+            item : this.props.item,
         };
       }
 
       render(){
           return (
+
+          <TouchableOpacity onPress={()=>{
+             this.props.pressHandleFunc && this.props.pressHandleFunc(this.props.item);
+          }}>
               <View style={styles.containerStyle}>
                   <View style={{flex : 20 }}>
-                      <Text style={styles.news_text}>{ this.state.data.title}  </Text>
-                      <Image style={[styles.news_image]} source={{uri : this.state.data.cover}}
+                      <Text style={styles.news_text}>{ this.state.item.title}  </Text>
+                      <Image style={[styles.news_image]} source={{uri : this.state.item.cover}}
                              resizeMode='stretch'
                       />
                   </View>
-
               </View>
-
-
+          </TouchableOpacity>
           );
       }
 }

@@ -4,9 +4,22 @@
  * @flow
  */
 
-import native from './src/index'
+import React, { PureComponent } from 'react'
+import { AppRegistry ,View,Image} from 'react-native'
 
-native();
+import RootScene from './src/RootScene';
+
+export default class SunDemo extends PureComponent {
+    render () {
+
+        return (
+            <RootScene/>
+            //<BookSNSCell total = {5} stars = 3/>
+        )
+    }
+}
+AppRegistry.registerComponent('SunDemo', () => SunDemo);
+
 // import React from 'react';
 // import {AppRegistry, Text,View,TouchableOpacit,Button}from 'react-native';
 //

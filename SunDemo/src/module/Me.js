@@ -11,7 +11,7 @@ import computeTime from '../Utils/computeTime'
 import AllSubjectTableView from './all-subject/View'
 import {StackNavigator} from 'react-navigation'
 import NewsPage  from './News'
-import AllSubject from './all-subject/View'
+
 
 export default class MeView extends React.Component {
 

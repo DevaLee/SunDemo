@@ -25,6 +25,15 @@ export default class SubjectProxy {
    _addSubject(subject){
        this.subjectDataArray.push(subject);
    }
-   
+
+    /**
+     *  移除所有数据
+     * @private
+     */
+   _removeAllSubject(){
+       let count = this.subjectDataArray.length;
+       this.subjectDataArray.splice(0,count);
+       console.log("count::" + this.subjectDataArray.length);
+   }
     
 }

@@ -7,26 +7,31 @@ import {
 } from 'react-native';
 import {StackNavigator }from 'react-navigation';
 import {AppRegistry} from 'react-native';
-import HomePageView from './module/HomePage';
+import HomePageView from './module/home-page/HomePage';
 import MeView from './module/Me'
 import TabbarView from './lib/Tabbar'
 import AllSubjectTableView from './module/all-subject/View'
 import News from './module/News'
+import SubjectDetail from  './module/subject-detail/view'
 
 
 export default function () {
     try {
         const SunDemo = StackNavigator({
-            // 'TabbarView' : {
-            //     screen : TabbarView,
-            //     navigationOptions :{
-            //         header : null
-            //     }
-            // }
-            Home : {screen : TabbarView ,navigationOptions:{header : null}},
+            Home : {screen : TabbarView},
             News : {screen : News},
-            AllSubjectTableView : {screen : AllSubjectTableView}
-        });
+            AllSubjectTableView : {screen : AllSubjectTableView},
+            SubjectDetail : {screen :SubjectDetail}
+        },
+            {
+                navigationOptions: {
+                    // headerStyle: { backgroundColor: color.theme }
+                    headerTintColor: '#333333',
+                    showIcon: true,
+                },
+            }
+
+        );
          AppRegistry.registerComponent('SunDemo', () => SunDemo);
     }catch (error) {
 

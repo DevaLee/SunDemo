@@ -26,9 +26,9 @@ export default class SubjectController {
     async _getSubjectData(index) {
         let network = new MXRNetworkManager();
         let url = 'https://bs-core.mxrcorp.cn/home/recommend/all?index=' + index;
+        console.log("专区 url" + url)
         let result = await network.get(url, null);
         let dataDict = JSON.parse(result.data);
-        console.log(dataDict);
         let listArray = dataDict['list'];
         let number = SubjectProxy.instance.subjectDataArray.length;
         console.log('listArray' + listArray);

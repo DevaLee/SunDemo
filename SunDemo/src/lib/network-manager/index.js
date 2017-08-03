@@ -107,7 +107,6 @@ export default class MXRNetworkManager{
         try {
             // 注意这里的await语句，其所在的函数必须有async关键字声明
             let url = await this.makeUrl(method,absoluteURL,params);
-            console.log(url);
             let headBody = await this.makeMethodHeadBody(method,params);
             let response = await fetch(url,headBody);
             let responseJson = await response.json();
