@@ -10,6 +10,7 @@ import TabBarItem from './widget/TabBarItem'
 import AllSubjectTableView from './module/all-subject/View'
 import DreamSNSView from './module/dream-sns/DreamSNSView'
 import BookDetailView from './module/book-detail/BookDetailView'
+import SearchBookView from './module/search-book/SearchBookView'
 
 class RootScene extends PureComponent {
     // 构造
@@ -18,7 +19,7 @@ class RootScene extends PureComponent {
         // 初始状态
         this.state = {};
 
-        StatusBar.setBarStyle('light-content');
+        StatusBar.setBarStyle('dark-content');
       }
 
       render(){
@@ -92,7 +93,8 @@ const Navigator = StackNavigator(
     {
         Tab : {screen : Tab},
         AllSubjectTableView : {screen : AllSubjectTableView},
-        BookDetailView : {screen : BookDetailView}
+        BookDetailView : {screen : BookDetailView},
+        SearchBookView : {screen : SearchBookView},
 
     },
     {

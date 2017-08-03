@@ -21,7 +21,8 @@ import HomePageZoneItem from './HomePageZoneItem'
 export default class HomePageView extends React.Component {
 
     static navigationOptions  = ({navigation}) =>({
-        headerRight : <NavigationItem icon={require('../../res/home-page/search_green.png')}/> ,
+        headerRight : <NavigationItem icon={require('../../res/home-page/search_green.png')}
+                             onPress={() =>(navigation.navigate('SearchBookView'))}/> ,
         headerTitle : <NavigationItem icon={require('../../res/book-detail/down_arrow.png')}
                                       title='为你推荐' containerStyle={{flexDirection : 'row-reverse'}}
                                       iconStyle ={{width : 10, height : 7.5}}
@@ -46,6 +47,13 @@ export default class HomePageView extends React.Component {
         this.requestHomePageData()
         this.requestBannerData()
     }
+
+    /**
+     *  SectionList Item
+     * @param item
+     * @returns {XML}
+     * @private
+     */
     _renderItem = (item) => {
         if (item.section.module.type === 1) {
            return (
@@ -83,22 +91,48 @@ export default class HomePageView extends React.Component {
             return <View/>
         }
     };
-
+    /**
+     *  FlatList key
+     * @param item
+     * @param index
+     * @returns {number}
+     */
     keyExtractorFlatList = (item : Object, index : number) =>{
         return index;
     }
-
+    /**
+     *  SectionList key
+     * @param item
+     * @param index
+     * @returns {Object}
+     */
     keyExtractor = (item: Object, index: number) => {
         return item
     }
+    /**
+     *  每一个 Section的头视图
+     * @param module
+     * @returns {XML}
+     * @private
+     */
     _renderSectionHeader = (module) => {
         return ( <HomePageSectionHeader module={module.section.module} />)
     }
+    /**
+     * SectionList 的头视图
+     * @returns {XML}
+     * @private
+     */
     _renderListHeader = () => {
         return (<HomePageHeaderView imageArray = {this.state.bannerDataArray}
                                     onPressBanner={(this._onPressBanner)} />)
     }
-      render(){
+
+    /**
+     *  渲染 书城首页
+     * @returns {XML}
+     */
+    render(){
 
         return (
             <View style={{flex :1}}>
@@ -118,7 +152,11 @@ export default class HomePageView extends React.Component {
 
       };
 
-       async requestBannerData(){
+    /**
+     * 请求 banner数据
+     * @returns {Promise.<void>}
+     */
+    async requestBannerData(){
            let {data} = await new MXRNetworkManager().get(api.bannerUrl);
            // console.log(data);
            let bannerArray = JSON.parse(data);
@@ -130,7 +168,11 @@ export default class HomePageView extends React.Component {
           }
        }
 
-       async requestHomePageData(){
+    /**
+     * 请求书城首页数据
+     * @returns {Promise.<void>}
+     */
+    async requestHomePageData(){
            let {data} = await new MXRNetworkManager().get(api.HomePageUrl);
            let HomePageDict = JSON.parse(data);
             let listArray = HomePageDict['list'];
@@ -162,8 +204,6 @@ export default class HomePageView extends React.Component {
      */
     _onPressBookItem (bookItem : Object){
         this.props.navigation.navigate('BookDetailView',{'bookItem' : bookItem})
-
-        //alert(bookItem.itemId)
     }
 
     /**
@@ -173,6 +213,14 @@ export default class HomePageView extends React.Component {
      */
     _onPressZoneItem (zoneItem : Object){
         alert(zoneItem.itemId)
+    }
+
+    /**
+     * 点击搜索
+     * @private
+     */
+    _onPressSearch (){
+        alert(1)
     }
 
 
