@@ -21,8 +21,8 @@ import HomePageZoneItem from './HomePageZoneItem'
 export default class HomePageView extends React.Component {
 
     static navigationOptions  = ({navigation}) =>({
-        headerRight : <NavigationItem icon={require('../../res/Tab-Res/tabBar_wo_sel.png')}/> ,
-        headerTitle : <NavigationItem icon={require('../../res/Tab-Res/tabBar_wo_nor.png')}
+        headerRight : <NavigationItem icon={require('../../res/home-page/search_green.png')}/> ,
+        headerTitle : <NavigationItem icon={require('../../res/home-page/arrow.png')}
                                       title='为你推荐' containerStyle={{flexDirection : 'row-reverse'}}/>,
         headerStyle : {backgroundColor : 'white'}
     });
@@ -47,32 +47,22 @@ export default class HomePageView extends React.Component {
     _renderItem = (item) => {
         if (item.section.module.type === 1) {
            return (
-               <View style={styles.list}>
-                  {item.item.map((bookItem , i) => (
-                      <HoemPageBookItem bookItem={bookItem} key = {i}/>
-                  ))}
-              </View>
-
-                   //onRefresh = { ()=>(this._fetchData())}
-                   //refreshing={this.state.refreshing}
-                   //ItemSeparatorComponent={this._renderSeperatorView}
-                   // ListFooterComponent = {this._renderFooterView}
-                   // ListEmptyComponent = {this._renderEmptyView}
-                   //getItemLayout={(data,index) =>({length :px2dp(375) / 16.0 * 6,offset:px2dp(375) / 16.0 * 6 *index,index})}
-                   //onEndReachedThreshold={0.01}
-                   //onEndReached = {()=>{this._fetchData()}}
-
-
-
+               <FlatList
+                   style={styles.flatListStyle}
+                   data={item.item}
+                   renderItem={(bookItem) =>
+                       <HoemPageBookItem bookItem = {bookItem.item}
+                                         key = {bookItem.item}
+                                         pressHandleFunc= {(item)=>{this._pressHandleFunc(item)}}
+                       />}
+                   horizontal={true}
+                   keyExtractor = {this.keyExtractorFlatList}
+                   showsHorizontalScrollIndicator={false}
+               />
            )
         } else if(item.section.module.type === 3) {
 
             return (
-               // <View style={styles.list}>
-                 //   {item.item.map((zoneItem , i) => (
-                   //     <HomePageZoneItem zoneItem={zoneItem} key = {i}/>
-                 //   ))}
-               // </View>
                 <FlatList
                     style={styles.flatListStyle}
                     data={item.item}
@@ -92,12 +82,6 @@ export default class HomePageView extends React.Component {
         }
     };
 
-    renderExpenseItem(item, i) {
-
-        return <View>
-            <Text> { i }</Text>
-        </View>
-    }
     keyExtractorFlatList = (item : Object, index : number) =>{
         return index;
     }
@@ -127,7 +111,6 @@ export default class HomePageView extends React.Component {
 
                 />
             </View>
-
         );
 
       };
@@ -149,17 +132,11 @@ export default class HomePageView extends React.Component {
            let HomePageDict = JSON.parse(data);
             let listArray = HomePageDict['list'];
             if (listArray){
-                console.log(`listArray.length:${listArray.length}`)
                 var  newListArray = [];
                 listArray.forEach((module , i) => {
                     let itemsArray = module['items'];
-                    // var  newItemsArray = [];
-                    // itemsArray.forEach((item,i,itemsArray) => {
-                    //     newItemsArray.push({key:i,data:item});
-                    // });
                     newListArray.push({key :i ,data : [itemsArray],module : module});
                 });
-
 
                 this.setState({
                     HomePageDataArray:newListArray
@@ -179,7 +156,6 @@ const styles =  StyleSheet.create({
     },
 
     list: {
-       // justifyContent: 'space-between',
         flexDirection: 'row',
         flexWrap: 'nowrap',
         alignItems: 'flex-start',
@@ -190,8 +166,4 @@ const styles =  StyleSheet.create({
         paddingBottom : 15,
         backgroundColor :'white'
     },
-
-
-
-
 });

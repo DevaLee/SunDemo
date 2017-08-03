@@ -37,8 +37,6 @@ export default class SubjectDetailView extends Component{
           this.setState({
              item : this.props.navigation.state.params.item
           });
-
-        // this._fetchData();
     }
     render(){
         return(
@@ -53,34 +51,6 @@ export default class SubjectDetailView extends Component{
                 extraData = {this.state.item}
                 renderItem ={({item}) => <Book item={item}/>}
             />
-
-
-            //                     <FlatList
-//                         ref={(flatList) => this._flatList = flatList}
-//                         ListHeaderComponent={this._header}
-//                         ListFooterComponent={this._footer}
-//                         ItemSeparatorComponent={this._separator}
-//                         renderItem={this._renderItem}
-//
-//
-//                         numColumns ={2}
-//                         columnWrapperStyle={{ borderWidth: 2, borderColor: 'black' }}
-//                         refreshing={this.state.refreshing}
-//                         getItemLayout={(data, index) => (
-//                             { length: ITEM_HEIGHT, offset: (ITEM_HEIGHT + 2) * index, index }
-//                         ) }
-//                         onRefresh={this._onRefresh}
-//                         onEndReachedThreshold={0.1}
-//                         onEndReached={(info) => {
-//                             alert("滑动到底部了");
-//                         } }
-//
-//                         onViewableItemsChanged={(info) => {
-//                             //    alert("可见不可见触发");
-//                         } }
-//                         data={data}>
-//                     </FlatList>
-
         );
     }
     _fetchData (){
