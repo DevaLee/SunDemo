@@ -2,7 +2,7 @@
  * Created by ritamashin on 2017/8/1.
  */
 import React,{PureComponent} from 'react';
-import {View, Text,StyleSheet,Image} from 'react-native';
+import {View, Text,StyleSheet,Image,TouchableOpacity} from 'react-native';
 import Swiper from 'react-native-swiper'
 
 import px2dp , {Screen} from '../../Utils/px2dp'
@@ -18,7 +18,7 @@ class HomePageHeaderView extends PureComponent {
 
         return (
 
-        <View style={styles.wrapper}>
+        <View style={styles.wrapper} >
             <Swiper  autoplay={true}
                      height={px2dp(375) * 0.4}
                      autoplayTimeout = {2.5}
@@ -26,16 +26,15 @@ class HomePageHeaderView extends PureComponent {
                      dot = {<View style={{backgroundColor:'gray', width: 8, height: 8,borderRadius: 4, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3,}} />}
             >
                 {imageArray.map((index,i) =>(
-                    <View style={{flex :1}} key = {i}>
+                    <TouchableOpacity style={{flex :1}} key = {i} onPress={ () =>this.props.onPressBanner(index)}>
                         <Image source={{uri : index.bannerUrl}} style={{width : px2dp(375),height : px2dp(375) * 0.4}} />
-                    </View>
+                    </TouchableOpacity>
                 ))}
             </Swiper>
         </View>
-
         )
-
     }
+
 }
 
 const styles = StyleSheet.create({

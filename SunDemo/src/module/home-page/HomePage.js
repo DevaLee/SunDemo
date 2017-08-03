@@ -22,8 +22,10 @@ export default class HomePageView extends React.Component {
 
     static navigationOptions  = ({navigation}) =>({
         headerRight : <NavigationItem icon={require('../../res/home-page/search_green.png')}/> ,
-        headerTitle : <NavigationItem icon={require('../../res/home-page/arrow.png')}
-                                      title='为你推荐' containerStyle={{flexDirection : 'row-reverse'}}/>,
+        headerTitle : <NavigationItem icon={require('../../res/book-detail/down_arrow.png')}
+                                      title='为你推荐' containerStyle={{flexDirection : 'row-reverse'}}
+                                      iconStyle ={{width : 10, height : 7.5}}
+                               />,
         headerStyle : {backgroundColor : 'white'}
     });
 
@@ -53,7 +55,7 @@ export default class HomePageView extends React.Component {
                    renderItem={(bookItem) =>
                        <HoemPageBookItem bookItem = {bookItem.item}
                                          key = {bookItem.item}
-                                         pressHandleFunc= {(item)=>{this._pressHandleFunc(item)}}
+                                         onPressBookItem= {(this._onPressBookItem.bind(this))}
                        />}
                    horizontal={true}
                    keyExtractor = {this.keyExtractorFlatList}
@@ -69,7 +71,7 @@ export default class HomePageView extends React.Component {
                     renderItem={(zoneItem) =>
                         <HomePageZoneItem zoneItem = {zoneItem.item}
                                           key = {zoneItem.item}
-                                          pressHandleFunc= {(item)=>{this._pressHandleFunc(item)}}
+                                          onPressZoneItem= {(this._onPressZoneItem)}
 
                         />}
                     horizontal={true}
@@ -93,7 +95,8 @@ export default class HomePageView extends React.Component {
         return ( <HomePageSectionHeader module={module.section.module} />)
     }
     _renderListHeader = () => {
-        return (<HomePageHeaderView imageArray = {this.state.bannerDataArray}/>)
+        return (<HomePageHeaderView imageArray = {this.state.bannerDataArray}
+                                    onPressBanner={(this._onPressBanner)} />)
     }
       render(){
 
@@ -142,11 +145,37 @@ export default class HomePageView extends React.Component {
                     HomePageDataArray:newListArray
                 });
             }
-
-
-
-
        }
+
+    /**
+     *  banner 点击
+     *
+     */
+    _onPressBanner(bannerItem : Object){
+        alert(bannerItem.bannerUrl)
+    }
+
+    /**
+     *  图书 点击
+     * @param bookItem
+     * @private
+     */
+    _onPressBookItem (bookItem : Object){
+        this.props.navigation.navigate('BookDetailView',{'bookItem' : bookItem})
+
+        //alert(bookItem.itemId)
+    }
+
+    /**
+     *  专区点击
+     * @param zoneItem
+     * @private
+     */
+    _onPressZoneItem (zoneItem : Object){
+        alert(zoneItem.itemId)
+    }
+
+
 };
 const styles =  StyleSheet.create({
     wrapper :{

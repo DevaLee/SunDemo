@@ -8,6 +8,7 @@ import React, { PureComponent } from 'react'
 import { AppRegistry ,View,Image} from 'react-native'
 
 import RootScene from './src/RootScene';
+import BookDetailView from './src/module/book-detail/BookDetailView'
 
 export default class SunDemo extends PureComponent {
     render () {

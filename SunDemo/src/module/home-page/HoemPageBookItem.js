@@ -11,7 +11,7 @@ export default class HomePageBookItem extends PureComponent {
         let bookItem = this.props.bookItem;
 
         return (
-            <TouchableOpacity style={styles.container}>
+            <TouchableOpacity style={styles.container} onPress={() => this.props.onPressBookItem(bookItem)}>
                 <Image style={styles.book_Image} source={{uri : bookItem.itemIcon}} resizeMode={'cover'}/>
                 <Text style={styles.book_Name} numberOfLines={2}> {bookItem.itemName} </Text>
                 <View style={{flex : 1}}/>

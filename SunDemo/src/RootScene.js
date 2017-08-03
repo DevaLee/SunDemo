@@ -9,6 +9,7 @@ import MeView from './module/Me'
 import TabBarItem from './widget/TabBarItem'
 import AllSubjectTableView from './module/all-subject/View'
 import DreamSNSView from './module/dream-sns/DreamSNSView'
+import BookDetailView from './module/book-detail/BookDetailView'
 
 class RootScene extends PureComponent {
     // 构造
@@ -90,7 +91,8 @@ const Tab = TabNavigator(
 const Navigator = StackNavigator(
     {
         Tab : {screen : Tab},
-        AllSubjectTableView : {screen :AllSubjectTableView}
+        AllSubjectTableView : {screen : AllSubjectTableView},
+        BookDetailView : {screen : BookDetailView}
 
     },
     {
