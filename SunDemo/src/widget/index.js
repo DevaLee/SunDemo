@@ -5,11 +5,13 @@ import TabBarItem from './TabBarItem'
 import RefreshListView  from './RefreshListView'
 import RefreshState from './RefreshState'
 import color from './color'
+import StarLevelView from './star-level-view'
 
 
 export {
     TabBarItem,
     RefreshListView,
     RefreshState,
-    color
+    color,
+    StarLevelView
 }

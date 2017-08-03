@@ -4,7 +4,7 @@
 import React, {PureComponent} from 'react';
 import {View, Text,Image,StyleSheet,TouchableOpacity} from 'react-native';
 import px2dp  from '../../Utils/px2dp'
-import {color} from '../../widget'
+import {color ,StarLevelView} from '../../widget'
 import NavigationItem from '../../widget/NavigationItem'
 import MXRNetworkManager from '../../lib/network-manager'
 import api from '../../api'
@@ -37,36 +37,14 @@ export default class BookDetailView extends  PureComponent {
 
       render(){
           let bookInfo = this.state.bookInfo;
-          let star = bookInfo.bookStart;
-          var halfStar = star % 2;
-          var fullStar = (star - halfStar) / 2;
-          var noStar = 5 - fullStar - halfStar;
-
-          var fullStarArray = [];
-          var halfStarArray = [];
-          var noStarArray = [];
-
-          for (var j = 0; j < fullStar; j++) {
-              fullStarArray.push(1);
-          };
-
-          for (var j = 0; j < halfStar; j++) {
-              halfStarArray.push(1);
-          }
-
-          for (var j = 0; j < noStar; j++) {
-              noStarArray.push(1);
-          }
-
+          let star = bookInfo.bookStar;
           return(
               <View style={styles.container}>
                   <View style={styles.headerContainer}>
                       <Image style={styles.bookCover} source={{uri : bookInfo.bookCoverURL}}/>
-                      <View style={{flex : 1 ,justifyContent :'flex-end',marginLeft : 10}}>
+                      <View style={{flex : 1 ,justifyContent :'flex-end',paddingLeft : 10,}}>
                           <Text style={styles.bookName}> {bookInfo.bookName}  </Text>
-                          <View style={{flexDirection : 'row'}}>
-                              {/*{fullStarArray.map(()=>(<Image source={'../'}/>))}*/}
-                          </View>
+                          <StarLevelView starCount = {star}/>
                           <View style={{flex : 1}}/>
                           <Text style={styles.bookPublish}> {bookInfo.bookDownloadTimes}  </Text>
                           <Text style={styles.bookPublish}> {bookInfo.bookReadTimes} </Text>
@@ -202,5 +180,5 @@ const styles = StyleSheet.create({
         marginLeft: px2dp(10),
 
         color : '#777777'
-    }
+    },
 });
