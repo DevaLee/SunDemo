@@ -8,6 +8,9 @@ import {color ,StarLevelView} from '../../widget'
 import NavigationItem from '../../widget/NavigationItem'
 import MXRNetworkManager from '../../lib/network-manager'
 import api from '../../api'
+import SearchOptionView from './SearchOptionView'
+import SearchBookHotKeyView from './SearchBookHotKeyView'
+
 
 export default class SearchBookView extends PureComponent {
 
@@ -27,17 +30,45 @@ export default class SearchBookView extends PureComponent {
       constructor(props) {
         super(props);
         // 初始状态
-        this.state = {};
+        this.state = {
+            hotKeyArray : []
+        };
       }
 
     componentDidMount() {
-
+        this._requestHotKeyData();
     }
 
     render(){
           return (
-              <Text> 搜索图书 </Text>
+
+            <View style={{flex : 1,backgroundColor : 'white'}}>
+                <SearchOptionView onPress={() => this._onPressSearchOption()}/>
+                <View style={styles.search_Hot_Key_Container}>
+                    <Text style={{color : '#aaaaaa', fontSize : 14,marginBottom : 8}}>为你推荐</Text>
+                    <SearchBookHotKeyView titles= {this.state.hotKeyArray}
+                                          onSelected = {(i) => this._onPressHotKey(i)}
+                                          style={styles.search_Hot_Key_List}/>
+                </View>
+
+            </View>
+
           );
+    }
+    _onPressSearchOption(){
+        alert('图书分类')
+    }
+    _onPressHotKey(i){
+        alert (i)
+
+    }
+
+    _requestHotKeyData (){
+        let hotKeyArray = api.hotKeyArray;
+        this.setState({
+            hotKeyArray: hotKeyArray
+        })
+
     }
 }
 
@@ -88,6 +119,13 @@ const styles = StyleSheet.create({
     cancelText : {
        fontSize: px2dp(17),
         color : '#777777'
+    },
+    search_Hot_Key_Container :{
+       backgroundColor :'white',
+        padding: px2dp(10),
+    },
+    search_Hot_Key_List :{
+      backgroundColor : 'white',
     }
 
 
