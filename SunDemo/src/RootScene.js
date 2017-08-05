@@ -5,7 +5,7 @@ import React, { PureComponent } from 'react'
 import { StatusBar } from 'react-native'
 import { StackNavigator, TabNavigator, TabBarBottom } from 'react-navigation';
 import HomePage from './module/home-page/HomePage';
-import MeView from './module/Me'
+import MeView from './module/Me/Me'
 import TabBarItem from './widget/TabBarItem'
 import AllSubjectTableView from './module/all-subject/View'
 import DreamSNSView from './module/dream-sns/DreamSNSView'

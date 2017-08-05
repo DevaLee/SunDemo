@@ -8,7 +8,7 @@ import React, { PureComponent } from 'react'
 import { AppRegistry ,View,Image} from 'react-native'
 
 import RootScene from './src/RootScene';
-import BookDetailView from './src/module/book-detail/BookDetailView'
+import DreamSNSHeaderTopicItem from './src/module/dream-sns/DreamSNSHeaderTopicItem'
 
 export default class SunDemo extends PureComponent {
     render () {
