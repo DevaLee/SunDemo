@@ -11,13 +11,12 @@ import api from '../../api'
 
 export default class BookDetailView extends  PureComponent {
     static navigationOptions = ({navigation}) =>({
-
         headerStyle : {backgroundColor : 'white'},
         title : '图书详情',
-        headerBackTitle : '返回'
+        headerTintColor : color.themeColor,
+        headerTitleStyle : {color : '#333333'}
+
     });
-
-
 
     // 构造
       constructor(props) {
@@ -40,6 +39,7 @@ export default class BookDetailView extends  PureComponent {
           let star = bookInfo.bookStar;
           return(
               <View style={styles.container}>
+                  {/*图书信息*/}
                   <View style={styles.headerContainer}>
                       <Image style={styles.bookCover} source={{uri : bookInfo.bookCoverURL}}/>
                       <View style={{flex : 1 ,justifyContent :'flex-end',paddingLeft : 10,}}>
@@ -52,6 +52,7 @@ export default class BookDetailView extends  PureComponent {
                       </View>
                   </View>
                   <View style={{backgroundColor:'rgb(236,236,236)',height : px2dp(10)}}/>
+                  {/*图书简介*/}
                   <View style={styles.bookIntroContainer}>
                       <View style={styles.bookIntroduceHeader}>
                           <View style={styles.greenBlock} />
@@ -83,10 +84,8 @@ export default class BookDetailView extends  PureComponent {
 
 
                   </View>
-
               </View>
           );
-
       }
 
     /**

@@ -33,5 +33,8 @@ export default {
             ]
         ],
 
-    recommendTopicUrl : 'https://bs-community.mxrcorp.cn/community/topics/recommend?page=1&rows=10'
-}
+    recommendTopicUrl : 'https://bs-community.mxrcorp.cn/community/topics/recommend?page=1&rows=10',
+    SNSDynamicUrl : 'https://bs-community.mxrcorp.cn//community/dynamics?page=1&rows=60&uid=BQkAAAA6PToy',
+    SNSDynamicNextUrl : 'https://bs-community.mxrcorp.cn/community/dynamics/next',
+};
+

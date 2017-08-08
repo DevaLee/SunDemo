@@ -8,7 +8,7 @@ import px2dp from '../../Utils/px2dp'
 class HomePageZoneItem extends PureComponent {
 
     render(){
-        let zoneItem = this.props.zoneItem
+        let zoneItem = this.props.zoneItem;
         return (
             <TouchableOpacity style={{marginRight : 8 ,borderColor : "#e0e0e0",borderWidth : px2dp(1)}}
                               onPress={() => this.props.onPressZoneItem(zoneItem)}
@@ -19,5 +19,5 @@ class HomePageZoneItem extends PureComponent {
             </TouchableOpacity>
         )
     }
-};
+}
 export  default HomePageZoneItem;

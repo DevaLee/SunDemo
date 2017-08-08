@@ -33,9 +33,7 @@ export default class DreamSNSHeaderView extends PureComponent{
     }
       render() {
           let dataArray = this.props.topicDataArray;
-
           return (
-
               <View style={styles.container}>
                   <FlatList renderItem = {(item)=> this._renderItem(item)}
                             data={dataArray}
@@ -47,8 +45,6 @@ export default class DreamSNSHeaderView extends PureComponent{
               </View>
           )
       }
-
-
 }
 const styles = StyleSheet.create({
    container : {

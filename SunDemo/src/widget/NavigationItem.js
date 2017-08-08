@@ -3,6 +3,7 @@
  */
 import React,{PureComponent} from 'react';
 import {View, Text, StyleSheet, TouchableOpacity, Image} from 'react-native'
+import {computerTime ,px2dp,SNSTime} from '../Utils'
 
 class NavigationItem extends PureComponent {
 
@@ -32,14 +33,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     icon: {
-        width: 27,
-        height: 27,
-        margin: 8,
+        width: px2dp(27),
+        height:px2dp(27),
+        margin:px2dp(8),
     },
     title: {
         fontSize: 15,
         color: '#333333',
-        margin: 8,
+        margin: px2dp(8),
     }
 });
 

@@ -2,7 +2,9 @@
  * Created by mxr on 2017/7/31.
  */
 'use strict'
-export default function snsTime (timeStamp) {
+export default function snsTime (time) {
+    let timeStamp = parseInt(time);
+
     var minute = 1000 * 60;
     var hour = minute * 60;
     var day = hour * 24;

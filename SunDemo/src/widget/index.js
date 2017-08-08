@@ -6,6 +6,7 @@ import RefreshListView  from './RefreshListView'
 import RefreshState from './RefreshState'
 import color from './color'
 import StarLevelView from './star-level-view'
+import NavigationItem from './NavigationItem'
 
 
 export {
@@ -13,5 +14,6 @@ export {
     RefreshListView,
     RefreshState,
     color,
-    StarLevelView
+    StarLevelView,
+    NavigationItem
 }

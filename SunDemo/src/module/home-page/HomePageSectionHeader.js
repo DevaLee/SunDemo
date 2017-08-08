@@ -3,8 +3,8 @@
  */
 import React,{PureComponent} from 'react';
 import {View, Text,Image,StyleSheet,TouchableOpacity} from 'react-native';
-import ImageButton from "../../lib/ImageButtonWithText";
 import px2dp from '../../Utils/px2dp'
+import {color} from '../../widget'
 
 class HomePageSectionHeader extends PureComponent {
 
@@ -46,8 +46,8 @@ const styles = StyleSheet.create({
 
     },
     scan_Text :{
-       color : 'rgb(128,201,133)',
-        fontSize: 12
+        fontSize: 12,
+        color : color.themeColor
     }
 });
 

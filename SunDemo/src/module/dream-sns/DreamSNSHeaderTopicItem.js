@@ -9,6 +9,10 @@ import NavigationItem from '../../widget/NavigationItem'
 import MXRNetworkManager from '../../lib/network-manager'
 import api from '../../api'
 
+
+/**
+ * 热门话题
+ */
 export default class DreamSNSHeaderTopicItem extends PureComponent {
 
     // 构造
@@ -19,7 +23,7 @@ export default class DreamSNSHeaderTopicItem extends PureComponent {
       }
 
     render() {
-          let topicItem = this.props.topicItem;
+        let topicItem = this.props.topicItem;
         return (
             <TouchableOpacity style={styles.container}>
                 <Image source={{uri : topicItem.pic}}

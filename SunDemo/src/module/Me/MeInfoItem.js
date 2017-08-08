@@ -30,9 +30,6 @@ export default class MeInfoItem extends PureComponent {
                     </View>
                     <View style={{backgroundColor:'#cccccc',height :px2dp(0.5),marginLeft:px2dp(8) }}/>
                 </TouchableOpacity>
-
-
-
           )
       }
 

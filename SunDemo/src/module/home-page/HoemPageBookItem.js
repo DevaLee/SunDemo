@@ -21,15 +21,14 @@ export default class HomePageBookItem extends PureComponent {
 }
 
 const styles = StyleSheet.create({
-   book_Image :{
+     book_Image :{
+         width : px2dp(375) * 0.37,
+         height : px2dp(375) * 0.37 * 1.4,
 
-       width : px2dp(375) * 0.37,
-       height : px2dp(375) * 0.37 * 1.4,
-
-   },
+     },
 
      book_Name : {
-       color : '#666666',
+         color : '#666666',
          fontSize : 10,
          marginTop : px2dp(5),
          marginBottom : px2dp(5),
@@ -44,7 +43,5 @@ const styles = StyleSheet.create({
          borderWidth : px2dp(1),
          borderColor : '#e0e0e0',
          height : px2dp(375) * 0.37 * 1.4 + px2dp(33)
-   }
-
-
+     }
 });

@@ -10,7 +10,6 @@ import px2px from '../../Utils/px2dp'
 import computeTime from '../../Utils/computeTime'
 import AllSubjectTableView from '../all-subject/View'
 import {StackNavigator} from 'react-navigation'
-import NewsPage  from '../News'
 import MeHeaderView from './MeHeaderView'
 import MeInfoItem from './MeInfoItem'
 import api from '../../api'
@@ -87,10 +86,6 @@ export default class MeView extends React.Component {
                     data: listData,
                     key: i+'s',
                 }
-
-
-
-
             });
 
             this.setState({

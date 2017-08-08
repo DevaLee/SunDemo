@@ -1,18 +1,9 @@
 /**
- * Created by weiqingtang on 2017/6/21.
- *
- * support basic function to network,like GET,POST,DELETE
- * auto create header
- * auto connect the prams to url or body
- * auto decode and encode use base64
- *
+ * Created by mxr on 2017/7/27.
  */
 import native from '../native-interface'
 import Toast from 'react-native-root-toast';
 import ErrorCode from './error-code'
-
-
-
 
 export default class MXRNetworkManager{
     constructor(props){

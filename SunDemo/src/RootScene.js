@@ -11,6 +11,7 @@ import AllSubjectTableView from './module/all-subject/View'
 import DreamSNSView from './module/dream-sns/DreamSNSView'
 import BookDetailView from './module/book-detail/BookDetailView'
 import SearchBookView from './module/search-book/SearchBookView'
+import SubjectDetailView from './module/subject-detail/view'
 
 class RootScene extends PureComponent {
     // 构造
@@ -95,6 +96,7 @@ const Navigator = StackNavigator(
         AllSubjectTableView : {screen : AllSubjectTableView},
         BookDetailView : {screen : BookDetailView},
         SearchBookView : {screen : SearchBookView},
+        SubjectDetailView :{screen : SubjectDetailView}
 
     },
     {

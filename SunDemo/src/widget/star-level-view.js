@@ -7,6 +7,9 @@ import {View ,Image,StyleSheet} from 'react-native';
 import px2dp from '../Utils/px2dp'
 
 export default class StarLevelView extends PureComponent {
+    static propTypes={
+        starCount : React.PropTypes.number
+    }
 
     // 构造
       constructor(props) {

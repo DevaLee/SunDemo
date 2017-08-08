@@ -14,6 +14,7 @@ export default  {
     nullColor  : '#f3f4f6', //空背景色
     topicColor : '#333333', // 标题性文字
 
-    themeColor : 'rgb(0,179,138)' //绿色
+    themeColor : 'rgb(0,179,138)', //绿色
+    srcNameColor : 'rgb(23,102,250)'
 
 }

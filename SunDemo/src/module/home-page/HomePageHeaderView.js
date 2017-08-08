@@ -15,9 +15,8 @@ class HomePageHeaderView extends PureComponent {
 
     render (){
         let imageArray = this.props.imageArray;
-
+        // banner条
         return (
-
         <View style={styles.wrapper} >
             <Swiper  autoplay={true}
                      height={px2dp(375) * 0.4}
@@ -34,7 +33,6 @@ class HomePageHeaderView extends PureComponent {
         </View>
         )
     }
-
 }
 
 const styles = StyleSheet.create({
