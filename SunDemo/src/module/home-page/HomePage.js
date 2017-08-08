@@ -17,6 +17,9 @@ import HomePageSectionHeader from './HomePageSectionHeader'
 import HoemPageBookItem from './HoemPageBookItem'
 import HomePageZoneItem from './HomePageZoneItem'
 
+import RNFetchBlob from 'react-native-fetch-blob'
+
+
 export default class HomePageView extends React.Component {
 
     static navigationOptions  = ({navigation}) =>({
@@ -24,7 +27,7 @@ export default class HomePageView extends React.Component {
                              onPress={() =>(navigation.navigate('SearchBookView'))}/> ,
         headerTitle : <NavigationItem icon={require('../../res/book-detail/down_arrow.png')}
                                       title='为你推荐' containerStyle={{flexDirection : 'row-reverse'}}
-                                      iconStyle ={{width : 10, height : 7.5}}
+                                      iconStyle ={{width : px2dp(10), height : px2dp(7.5)}}
                                />,
         headerStyle : {backgroundColor : 'white'}
     });
@@ -243,11 +246,11 @@ const styles =  StyleSheet.create({
         flexDirection: 'row',
         flexWrap: 'nowrap',
         alignItems: 'flex-start',
-        margin : 5
+        margin : px2dp(5)
     },
     flatListStyle : {
-        paddingTop : 15,
-        paddingBottom : 15,
+        paddingTop : px2dp(15),
+        paddingBottom : px2dp(15),
         backgroundColor :'white'
     },
 });

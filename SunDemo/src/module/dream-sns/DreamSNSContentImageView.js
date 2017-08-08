@@ -15,6 +15,7 @@ import px2dp,{Screen} from '../../Utils/px2dp'
 import MXRNetworkManager from '../../lib/network-manager'
 import api from '../../api'
 import {StarLevelView} from '../../widget'
+import {CachedImage} from "react-native-img-cache";
 
 export default class DreamSNSContentImageView extends PureComponent {
     static propTypes : {
@@ -51,7 +52,7 @@ export default class DreamSNSContentImageView extends PureComponent {
                         <TouchableOpacity key={column}
                                           onPress={() => this.props.onPress && this.props.onPress(row,column)}
                                           activeOpacity={1}>
-                            <Image source={{uri : image}}
+                            <CachedImage source={{uri : image}}
                                    style={[{width :this.state.width ,height :this.state.height}]}
                                    defaultSource={require('../../res/book-sns/bookSNS_Image_default.png')}/>
                         </TouchableOpacity>
