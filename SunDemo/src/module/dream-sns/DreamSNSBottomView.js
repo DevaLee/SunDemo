@@ -19,6 +19,7 @@ export default class DreamSNSBottomView extends PureComponent{
     static propTypes :{
         info : React.PropTypes.object,
         bottomViewStyle : React.PropTypes.style
+
     }
 
 
@@ -26,7 +27,9 @@ export default class DreamSNSBottomView extends PureComponent{
       constructor(props) {
         super(props);
         // 初始状态
-        this.state = {};
+        this.state = {
+            info :this.props.info
+        };
       }
 
     render (){
@@ -35,12 +38,13 @@ export default class DreamSNSBottomView extends PureComponent{
           let transmitTitle = '转发';
           return (
               <View style={[styles.container ,this.props.bottomViewStyle]}>
-                  <DreamSNSButtonItem title={praiseTitle} icon={require('../../res/book-sns/btn_bookSNS_like.png')}
-                                      />
-                  <DreamSNSButtonItem title={commentTitle} icon={require('../../res/book-sns/btn_bookSNS_comment.png')}
-                                      />
-                  <DreamSNSButtonItem title={transmitTitle} icon={require('../../res/book-sns/btn_bookSNS_forward.png')}
-                                      />
+                  <DreamSNSButtonItem title={praiseTitle} normalImage={require('../../res/book-sns/btn_bookSNS_like.png')}
+                                      selectedImage={require('../../res/book-sns/btn_bookSNS_like_select.png')}
+                                      info={this.props.info} type="ADD_PRAISE"/>
+                  <DreamSNSButtonItem title={commentTitle} normalImage={require('../../res/book-sns/btn_bookSNS_comment.png')}
+                                      info={this.props.info} type="ADD_COMMENT"/>
+                  <DreamSNSButtonItem title={transmitTitle} normalImage={require('../../res/book-sns/btn_bookSNS_forward.png')}
+                                      info={this.props.info} type="TRANSMIT"/>
               </View>
           )
     }
